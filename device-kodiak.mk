@@ -30,10 +30,22 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     FaceEnroll
 
+# Alch3myOS About phone
+PRODUCT_PACKAGES += \
+    Alch3mySettingsKodiak
+
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.alch3my.maintainer=Pyrtle93 \
+    ro.alch3my.maintainer.url=https://t.me/PyrtlesPixels
+
 # The three vendor.*.modules/devices.ready properties gate the init blocks incl. the
 # vibrator HAL; without them system_server waits on IVibratorManager forever.
 PRODUCT_COPY_FILES += \
     device/google/kodiak/init.insmod.kodiak.cfg:$(TARGET_COPY_OUT_VENDOR_DLKM)/etc/init.insmod.kodiak.cfg
+
+# Starts stock's NFC HAL; the blob list skips stock's own init script for it.
+PRODUCT_COPY_FILES += \
+    device/google/kodiak/nfc/nfc2-service-default.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/nfc2-service-default.rc
 
 # The qfp extension interface only the fingerprint daemon registers.
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \

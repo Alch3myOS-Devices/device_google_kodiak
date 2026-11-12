@@ -5,4 +5,4 @@
 
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/aosp_kodiak.mk \
-    $(LOCAL_DIR)/lineage_kodiak.mk
+    $(LOCAL_DIR)/alch3my_kodiak.mk
